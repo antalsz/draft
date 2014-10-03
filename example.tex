@@ -1,0 +1,165 @@
+\documentclass[12pt]{article}
+
+\usepackage{draft}
+\newnote{asz}{violet}
+\newnote[\TeX]{tex}{teal}
+
+% Comment this out to see the notes.
+\draftfalse
+
+\begin{document}
+
+\section*{Explanation}
+
+Each subsequent section in this document contains the sentences ``Lorem ipsum
+dolor sit amet.  Consectetur adipisicing elit.'' repeated four times.  The first
+time, the sentence is unmodified.  The second time, the draft note
+``\makedraftnote{violet}{ASZ}{1}'' is inserted somewhere in the sentence, as
+specified in the section name.  The third time, this draft note is replaced with
+the two draft notes
+``\makedraftnote{violet}{ASZ}{1}\makedraftnote{teal}{\TeX}{2}'', with no
+intervening space.  The fourth time, those two draft notes are separated with a
+space: ``\makedraftnote{violet}{ASZ}{1} \makedraftnote{teal}{\TeX}{2}''.
+
+If this document is typeset with \verb+\drafttrue+, then the notes will be
+visible.  If this document is instead typeset with \verb+\draftfalse+, all four
+lines (or paragraph pairs, in the final case) will look identical, demonstrating
+that these commands completely vanish when the document is not in draft mode
+(not even leaving stray spaces behind).
+
+This document was typeset in
+\ifdraft
+  \emph{draft mode} (i.e., with \verb+\drafttrue+)%
+\else
+  \emph{non-draft mode} (i.e., with \verb+\draftfalse+)%
+\fi
+.
+
+\parindent=0pt
+
+\section*{After a period, before spaces.}
+
+Lorem ipsum dolor sit amet.  Consectetur adipisicing elit.
+
+Lorem ipsum dolor sit amet.\asz{1}  Consectetur adipisicing elit.
+
+Lorem ipsum dolor sit amet.\asz{1}\tex{2}  Consectetur adipisicing elit.
+
+Lorem ipsum dolor sit amet.\asz{1} \tex{2}  Consectetur adipisicing elit.
+
+\section*{After a period, after spaces.}
+
+Lorem ipsum dolor sit amet.  Consectetur adipisicing elit.
+
+Lorem ipsum dolor sit amet.  \asz{1}Consectetur adipisicing elit.
+
+Lorem ipsum dolor sit amet.  \asz{1}\tex{2}Consectetur adipisicing elit.
+
+Lorem ipsum dolor sit amet.  \asz{1} \tex{2}Consectetur adipisicing elit.
+
+\section*{After a period, between spaces.}
+
+Lorem ipsum dolor sit amet.  Consectetur adipisicing elit.
+
+Lorem ipsum dolor sit amet.  \asz{1}  Consectetur adipisicing elit.
+
+Lorem ipsum dolor sit amet.  \asz{1}\tex{2}  Consectetur adipisicing elit.
+
+Lorem ipsum dolor sit amet.  \asz{1} \tex{2}  Consectetur adipisicing elit.
+
+\section*{After a word, before spaces.}
+
+Lorem ipsum dolor sit amet.  Consectetur adipisicing elit.
+
+Lorem ipsum dolor\asz{1} sit amet.  Consectetur adipisicing elit.
+
+Lorem ipsum dolor\asz{1}\tex{2} sit amet.  Consectetur adipisicing elit.
+
+Lorem ipsum dolor\asz{1} \tex{2} sit amet.  Consectetur adipisicing elit.
+
+\section*{After a word, after spaces.}
+
+Lorem ipsum dolor sit amet.  Consectetur adipisicing elit.
+
+Lorem ipsum dolor \asz{1}sit amet.  Consectetur adipisicing elit.
+
+Lorem ipsum dolor \asz{1}\tex{2}sit amet.  Consectetur adipisicing elit.
+
+Lorem ipsum dolor \asz{1} \tex{2}sit amet.  Consectetur adipisicing elit.
+
+\section*{After a word, between spaces.}
+
+Lorem ipsum dolor sit amet.  Consectetur adipisicing elit.
+
+Lorem ipsum dolor \asz{1} sit amet.  Consectetur adipisicing elit.
+
+Lorem ipsum dolor \asz{1}\tex{2} sit amet.  Consectetur adipisicing elit.
+
+Lorem ipsum dolor \asz{1} \tex{2} sit amet.  Consectetur adipisicing elit.
+
+\section*{At the beginning of a paragraph, no spaces.}
+
+Lorem ipsum dolor sit amet.  Consectetur adipisicing elit.
+
+\asz{1}Lorem ipsum dolor sit amet.  Consectetur adipisicing elit.
+
+\asz{1}\tex{2}Lorem ipsum dolor sit amet.  Consectetur adipisicing elit.
+
+\asz{1} \tex{2}Lorem ipsum dolor sit amet.  Consectetur adipisicing elit.
+
+\section*{At the beginning of a paragraph, with spaces.}
+
+Lorem ipsum dolor sit amet.  Consectetur adipisicing elit.
+
+\asz{1} Lorem ipsum dolor sit amet.  Consectetur adipisicing elit.
+
+\asz{1}\tex{2} Lorem ipsum dolor sit amet.  Consectetur adipisicing elit.
+
+\asz{1} \tex{2} Lorem ipsum dolor sit amet.  Consectetur adipisicing elit.
+
+\section*{At the end of a paragraph, no spaces.}
+
+Lorem ipsum dolor sit amet.  Consectetur adipisicing elit.
+
+Lorem ipsum dolor sit amet.  Consectetur adipisicing elit.\asz{1}
+
+Lorem ipsum dolor sit amet.  Consectetur adipisicing elit.\asz{1} \tex{2}
+
+\section*{At the end of a paragraph, with spaces.}
+
+Lorem ipsum dolor sit amet.  Consectetur adipisicing elit.
+
+Lorem ipsum dolor sit amet.  Consectetur adipisicing elit.  \asz{1}
+
+Lorem ipsum dolor sit amet.  Consectetur adipisicing elit.  \asz{1}\tex{2}
+
+Lorem ipsum dolor sit amet.  Consectetur adipisicing elit.  \asz{1} \tex{2}
+
+\section*{In their own paragraph.}
+
+Lorem ipsum dolor sit amet.
+
+Consectetur adipisicing elit.
+
+Lorem ipsum dolor sit amet.
+
+\asz{1}
+
+Consectetur adipisicing elit.
+
+Lorem ipsum dolor sit amet.
+
+\asz{1}\tex{2}
+
+Consectetur adipisicing elit.
+
+Lorem ipsum dolor sit amet.
+
+\asz{1} \tex{2}
+
+Consectetur adipisicing elit.
+
+\end{document}
+
+% LocalWords: LocalWords asz ASZ tex
+% LocalWords: Lorem ipsum dolor sit amet Consectetur adipisicing elit
