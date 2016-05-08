@@ -71,7 +71,7 @@ commands `\drafttrue`, `\draftfalse`, `\newnote`, `\noteformat`, and
 * <code>\\noteformat{*format*}</code> allows you to change the default
   <code>[*AUTHOR*: *content*]</code> format of notes; the new format is given by
   <code>*format*</code>, where `#1` will be replaced by the note’s
-  <code>*AUTHOR*</code> and `#2` will be replaced by the note's
+  <code>*AUTHOR*</code> and `#2` will be replaced by the note’s
   <code>*content*</code>.  (So to get the default format, this package specifies
   `\noteformat{[#1: #2]}`.)
 
@@ -136,13 +136,13 @@ insert them.
 * <code>\\noteformat{*format*}</code> allows you to specify the format of notes
   rendered by `\makedraftnote`; the new format is given by
   <code>*format*</code>, where `#1` will be replaced by the note’s
-  <code>*author*</code> and `#2` will be replaced by the note's
+  <code>*author*</code> and `#2` will be replaced by the note’s
   <code>*content*</code>.  For example, the default
   <code>[*author*: *content*]</code> format is given by `\noteformat{[#1: #2]}`.
 
 * <code>\\newnote[*author*]{*cmd*}{*color*}</code> defines two new draft-only
   commands, <code>\\*cmd*{#1}</code> and <code>\\*cmd*foot{#1}</code>, which
-  insert a `\draftnote` and a `\draftfootnote`, respectively.  The note's
+  insert a `\draftnote` and a `\draftfootnote`, respectively.  The note’s
   <code>*color*</code> and <code>*author*</code> are given by `\newnote`; the
   content is specified by the resulting commands.  If <code>*author*</code> is
   omitted, then it defaults to <code>\uppercase{*cmd*}</code>.
@@ -154,7 +154,7 @@ that may be more broadly useful, but that do not directly relate to draft mode.
 
 * <code>\\NewDefinerWrapper{\\*newcommandish*}{\\*wrapped*}{*body*}</code> is a
   way to produce commands like `\newcommand` (and friends) that modify the
-  defined command's body.  It takes the command <code>\\*newcommandish*</code>,
+  defined command’s body.  It takes the command <code>\\*newcommandish*</code>,
   which should have the same syntax as `\newcommand`, and defines the new
   command <code>\\*wrapped*</code>, which also has the same syntax as
   `\newcommand`.  This <code>\\*wrapped*</code> command functions just like
