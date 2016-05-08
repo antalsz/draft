@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage[bottom=7.67in,hmargin=2.1in]{geometry}
+\usepackage{nopageno}
+
+\usepackage{draft}
+
+% Set `\drafttrue'/`\draftfalse' based on the command name:
+% `readme-example-draftCOND` becomes `\draftCOND`.  Without a `-draftCOND`, we
+% default to `\drafttrue'.
+%
+% We use eTeX's `\detokenize` to get a catcode-12 string, as `\jobname` is all
+% catcode 12.  To support typesetting this file without setting `\jobname`, we
+% use lots of `\expandafter`s to provide an additional `-drafttrue-` component
+% to the `\jobname` every time.
+\expandafter\def\expandafter\setdraft\detokenize{readme-example-draft}#1-#2\relax{\csname draft#1\endcsname}
+\expandafter\expandafter\expandafter\setdraft\expandafter\jobname\detokenize{-drafttrue-}\relax
+
+\newnote{asz}{violet}
+\newnote[Ed.]{ed}{teal}
+
+\begin{document}
+
+\whendraft{\centerline{\large We need to think of a title!}\bigskip}
+
+Lorem ipsum \asz{Not this again\ldots} dolor sit amet, consectetur adipiscing
+elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+\ed{Wait, this isn't \emph{actually} Latin!}  Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+\asz{TODO: Replace the next paragraph with a shorter pangram?}
+
+The quick brown fox jumps over the lazy dog.\edfoot{35 letters -- definitely too long.}
+
+\end{document}
