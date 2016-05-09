@@ -34,12 +34,12 @@ The quick brown fox jumps over the lazy dog.\edfoot{35 letters -- definitely too
 With `\draftfalse` commented out, the document is in draft mode, and appears
 with all the notes:
 
-![Document rendered in draft mode](readme-examples/readme-example-drafttrue.png)
+![Document rendered in draft mode](examples/readme/readme-example-drafttrue.png)
 
 However, turning off draft mode by uncommenting `\draftfalse` produces a
 document without any notes, and without any stray spaces:
 
-![Document rendered in non-draft mode](readme-examples/readme-example-draftfalse.png)
+![Document rendered in non-draft mode](examples/readme/readme-example-draftfalse.png)
 
 Most common package interface
 -----------------------------
