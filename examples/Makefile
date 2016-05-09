@@ -1,6 +1,6 @@
 all: example-drafttrue.pdf example-draftfalse.pdf
 
-%.pdf: %.tex
+%.pdf: %.tex ../draft.sty
 	TEXINPUTS=../: pdflatex $^
 
 example-drafttrue.tex: example.tex

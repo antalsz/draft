@@ -1,6 +1,6 @@
 all: readme-example-drafttrue.png readme-example-draftfalse.png
 
-readme-example-drafttrue.pdf readme-example-draftfalse.pdf: readme-example.tex
+readme-example-drafttrue.pdf readme-example-draftfalse.pdf: readme-example.tex ../../draft.sty
 	TEXINPUTS=../../: pdflatex -jobname=$(basename $@) $^
 
 %.cropped.pdf: %.pdf
