@@ -120,18 +120,22 @@ notes that should only appear in draft mode.  The `draft` package provides
 support for such notes, and for defining per-author color-coded commands to
 insert them.
 
-* <code>\\makedraftnote{*color*}{*author*}{*content*}</code> *unconditionally*
-  renders a draft note by <code>*author*</code> in the given
+* <code>\\makedraftnote{*color*}{*author*}{*content*}</code> and
+  <code>\\makedraftfootnote{*color*}{*author*}{*content*}</code>
+  *unconditionally* render a draft note by <code>*author*</code> in the given
   <code>*color*</code> with body <code>*content*</code>.  The formatting is that
   specified by `\noteformat`; by default, this means
-  <code>[*author*: *content*]</code>.  Note that this command *always* typesets
-  the note; see `\draftnote` and `\draftfootnote` for draft-only variants.
+  <code>[*author*: *content*]</code>.  The `\makedraftnote` command places this
+  note directly in the document; the `\makedraftfootnote` variant places this
+  content in a footnote, and colors the footnote markers with the appropriate
+  <code>*color*</code>.  (The footnote markers will vanish if the document is
+  not in draft mode; note that this will renumber the footnotes.)  Note that
+  these commands *always* typeset the note; see `\draftnote` and
+  `\draftfootnote` for draft-only variants.
 
 * <code>\\draftnote{*color*}{*author*}{*content*}</code> and
   <code>\\draftfootnote{*color*}{*author*}{*content*}</code> are draft-only
-  variants of `\makedraftnote`.  The `\draftnote` command is exactly the same as
-  a draft-only variant of `\makedraftnote`; the `\draftfootnote` command will
-  (in draft mode) insert a footnote whose contents are the requested draft note.
+  variants of `\makedraftnote` and `\makedraftfootnote`, respectively.
   
 * <code>\\noteformat{*format*}</code> allows you to specify the format of notes
   rendered by `\makedraftnote`; the new format is given by

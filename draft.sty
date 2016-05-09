@@ -88,15 +88,28 @@
 % `\makedraftnote{color}{author}{text}' unconditionally renders a draft note by
 % `author' in the given `color' with body `text'.  The formatting is that
 % specified by `\noteformat'.  Note that this command *always* typesets text;
-% see `\draftnote' and `\draftfootnote' for draft-only commands.
+% see `\draftnote' for a draft-only command.
 \newcommand{\makedraftnote}[3]{\textcolor{#1}{\@noteformat{#2}{#3}}}
+
+% `\makedraftfootnote{color}{author}{text}' unconditionally renders a draft
+% footnote by `author' in the given `color' with body `text'.  The formatting is
+% that specified by `\noteformat'.  This command is like `\makedraftnote`, but
+% the body of the note is placed as a footnote.  Note that this command *always*
+% typesets text; see `\draftfootnote' for a draft-only command.
+\newcommand{\makedraftfootnote}[3]{%
+  \textcolor{#1}{\footnotemark}%
+  \begingroup
+    \edef\thefootnote{%
+      \noexpand\textcolor{#1}{\unexpanded\expandafter{\thefootnote}}}%
+    \footnotetext{\makedraftnote{#1}{#2}{#3}}%
+  \endgroup}
 
 % `\draftnote{color}{author}{text}' renders a draft note by `author' in the
 % given `color' with body `text' when in draft mode, and disappears otherwise
 % (as per `\makedraftnote').  `\draftfootnote{color}{author}{text}' is the same,
 % except the note is placed in a footnote.
 \NewDraftCommand{\draftnote}[3]{\makedraftnote{#1}{#2}{#3}}
-\NewDraftCommand{\draftfootnote}[3]{\footnote{\makedraftnote{#1}{#2}{#3}}}
+\NewDraftCommand{\draftfootnote}[3]{\makedraftfootnote{#1}{#2}{#3}}
 
 % A local variable used by `\newnote'.
 \newcommand*{\@note@name}{}
