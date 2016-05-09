@@ -138,8 +138,8 @@ insert them.
   variants of `\makedraftnote` and `\makedraftfootnote`, respectively.
   
 * <code>\\noteformat{*format*}</code> allows you to specify the format of notes
-  rendered by `\makedraftnote`; the new format is given by
-  <code>*format*</code>, where `#1` will be replaced by the note’s
+  rendered by `\makedraftnote` and `\makedraftfootnote`; the new format is given
+  by <code>*format*</code>, where `#1` will be replaced by the note’s
   <code>*author*</code> and `#2` will be replaced by the note’s
   <code>*content*</code>.  For example, the default
   <code>[*author*: *content*]</code> format is given by `\noteformat{[#1: #2]}`.
