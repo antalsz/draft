@@ -1,6 +1,6 @@
 %%% draft.sty -- A package for inserting draft-only comments, etc.
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{draft}[2014/10/03 v1.0 Draft-only comments, etc.]
+\ProvidesPackage{draft}[2016/05/08 v1.1-beta Draft-only comments, etc.]
 
 \RequirePackage{xcolor}
 \RequirePackage{xparse}
@@ -101,6 +101,9 @@
 % A local variable used by `\newnote'.
 \newcommand*{\@note@name}{}
 
+% A local constant used by `\newnote' to detect an empty option argument.
+\newcommand*{\@note@name@empty}{\unexpanded{}}
+
 % `\newnote[author]{cmd}{color}' defines two new commands `\cmd' and `\cmdfoot'.
 % The former command is defined so that `\cmd{text}' renders a draft note by
 % `author' in the given `color' with body `text' when in draft mode, and
@@ -111,8 +114,8 @@
 \newcommand*{\newnote}[3][]{%
   % Use the given name; if none was given, use the uppercase form of the command
   % name.
-  \def\@note@name{#1}%
-  \ifx\@note@name\@empty
+  \def\@note@name{\unexpanded{#1}}%
+  \ifx\@note@name\@note@name@empty
     % Uppercases the *definition* of the name, so it can be used expandably
     % below.
     \uppercase{\def\@note@name{#2}}%

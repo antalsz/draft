@@ -13,7 +13,7 @@ Example usage:
 %\draftfalse
 
 \newnote{asz}{violet}
-\newnote[Ed.]{ed}{teal}
+\newnote[\emph{Ed.}]{ed}{teal}
 
 \begin{document}
 
