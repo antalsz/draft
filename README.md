@@ -113,7 +113,7 @@ portions of the document that only appear in draft mode.
   flexible enough for your desired draft-mode shenanigans, then you can work
   with `\ifdraft` directly.
 
-### Notes
+### Draft notes
 
 One common use case for draft-only commands is for document authors to insert
 notes that should only appear in draft mode.  The `draft` package provides
